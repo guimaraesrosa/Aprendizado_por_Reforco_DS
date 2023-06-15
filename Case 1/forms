@@ -1,0 +1,103 @@
+1. As classes dos algoritmos de ML são divididas entre aprendizado supervisionado quando existe uma varíavel resposta y, nesse contexto há os algoritmos de Classificação onde a variável resposta é qualitativa podendo ser binária ou multilabel, exemplos de algoritmos de classificação: Regressão Logística, Árvore de decisão, SVM (SVC), Algoritmos de boosting. Além disso, ainda no contexto do aprendizado supervisionado há os algoritmos de regressão, onde a variável resposta é quantitativa, exemplo, regressão linear, árvore de decisão e random forest para regressão. Uma outra classe de algoritmos de ML pertencem ao aprendizado não-supervisionado quando não existe informação apriori dos dados, ou seja, não há uma variável resposta y, e nesse contexto pode ser definido como esses algoritmos o Kmeans, DBSCAN, Algoritmos hieráquicos. 
+
+2. não tenho conhecimento sobre ABT
+3. não tenho conhecimento sobre ABT
+
+4. Não existe um número máximo de variaveis explicativas para um modelo, tudo depende da abordagem a ser adotada, que tipo de problema deseja-se resolver. No geral, um número muito grande de variáveis explicativas torna o modelo mais complexo, portanto o ideal é tentar reduzir este número através de análises de correlação, feature selection ou até mesmo abordagens de redução de dimensionalidade como o PCA.
+
+5. Variance Threshold: elimina features baseado na variância dos dados, valores com baixa variância indicam que as features são similares. SelectKBest: usa testes estatísticos como chi2 e correlação de pearson para selecionar um número específico de features. RFE: método recursivo em que é treinado o modelo com features iniciais, captura seus coeficientes ou importâncias e seleciona as melhores features, descartando outras. SelectFromModel: utiliza-se de um algoritmo para treinar e definir as features de maiores importância utilizando um threshold para definir a quantidade desejada.
+
+6. Entendo particionamento como a quebra de um grande conjunto de dados em pequenos blocos separados, mas que podem ser unificados por um ID. O particionamento auxilia no processamento dos dados, tanto na escrita quanto na leitura, executando de forma mais rápida.
+
+7. Overfitting em árvores de decisão pode ser evitado através de validação cruzada, ajuste de parâmetros como tamanho de profundidade, número mínimo ou porcentagem mínima de dados em folhas ou número mínimo em divisões da árvore. Além disso, um método bastande utilizado é o algoritmo de random forest, também baseado em conjuntos de árvores que juntas podem evitar overfitting.
+
+8. 1. Análise de problema: avaliação do problema junto à equipe de negócios para entender metologias, dados e abordagens da modelagem. 2. Preparação de dados: nessa etapa busca, analisa e constrói a base de modelagem. Aqui também faz selação e limpeza dos dados 3. Modelagem: escolha técnica do modelo, construção e avaliação do modelo. 4. Análise de resultados: revisão da modelagem e dos critérios adotados, análise do processo completo. 5. Implantação: colocar modelo para produção, além do monitoramento e manutenção. Entre as etapas 1 a 4 não existe um único fluxo, sendo que cada etapa dessa pode ser revisitada e reavaliada durante o processo de modelagem.
+
+9. Feature engineering é a engenharia de atributos, são as metodologias utilizadas na preparação dos dados para construir uma base concreta e ideal para a modelagem. Na engenharia de atributos são realizados análises de cada feature, suas distribuições e comportamentos, limpeza de dados, análise de outliers, além da seleção de features para melhor atribuição dos dados ao modelo.
+
+10. Redução de dimensionalidade como por exemplo o PCA.
+
+11. Depende da abordagem. Em alguns casos é possível remover esses outliers, entretanto há situações em que é necessário manter esses outliers e verificar os resultados do modelo, há algoritmos que trabalham bem com outliers, mas no geral, a remoção ou não deles depende do problema a ser resolvido.
+
+12. Conheço balanceamento de base como balanceamento de classe. Quando numa classificação há uma classe com frequência muito menor em relação a outra, exemplo, uma classe aparece em 90% dos dados enquanto a outra aparece somente em 10% dos dados. Neste caso, é necessário utilizar técnicas de balanceamento.
+
+13. Undersampling: quando você reduz a classe majoritária para a mesma proporção da classe minoritária, nessa abordagem por haver redução de dados há perdas de informação. E oversampling quando você cria dados sintéticos a partir dos dados da classe minoritária na tentativa de deixá-la na mesma proporção da classe majoritária, nessa abordagem os dados sintéticos podem não generalizar bem, também havendo distorção da informação. 
+
+14. Tratando-se dos dados de treinamento, o viés, é a diferença entre os dados reais e as previsões médias. Já a variância é a diferença dos dados reais e preditos pelo modelo nos dados de teste. Valor de viés alto por acarretar em um modelo mais simples enquanto valor de variância alto pode acarretar no modelo mais complexo. No modelo ideal, é desejável encontrar valores balanceados e mais baixos tanto para viés quanto para variância, para que o modelo não seja nem tao simples em tao complexo.
+
+15. Underfitting é quando o viés é alto, os dados de treinamento não performam bem, tornando o modelo mais simples. Overfitting é quando a variância está alta, os dados de treinamento performam bem, entretando os dados de teste já não performam tão bem, tornando o modelo mais complexo.
+
+16. Para treinamento do modelo a base de dados é dividida em folds (quebras). Se o k fold é especificado como 3, então a base de treinamento será dividida entre 3 partes iguais. No treinamento desses 3 folds, um será utilizado para validação do modelo e os outros 2 será utilizado para treinamento. Os folds se revezam no treinamento para que cada um possa ser em algum momento utilizado como validação. A técnica contribui para ajuste de parâmetros e avaliação do modelo é feita para cada um dos k folds. 
+
+17. Não sei informar, não tenho muito conhecimento sobre redes neurais.
+
+18. SVM é um algoritmo de aprendizado supervisionado podendo ser utilizado tanto para regressão quanto para classificação. É um algoritmo que utiliza um hiperplano para separar os dados, este hiperplano pode ser linear ou não. O que define sua linearidade são os kernel, kernel rbf com valores do parâmetro gamma alto podem tornar a barreira de divisão dos dados mais flexível. Em torno do hiperplano há uma margem que auxilia na separação dos dados, esta margem é definida pelo parâmetro C, quanto menor o C maior a margem, mais violação de dados entre a margem e o hiperplano e quanto maior o C menor sua margem.
+
+19. Não tenho conhecimento sobre RNA
+
+20. Random forest é o algoritmo de bagging em que são selecionados de forma aleatórias dados e features do conjunto de dados e criado um modelo baseado em árvore de decisão. As árvores são criadas de forma independente. Em seguida um novo conjunto de dados e features são selecionados também de forma aleatória e uma nova árvore é gerada. Serão geradas N arvores de decisão dependendo do parametro estipulado em n_estimadores. Ao final, a resposta do modelo será dada pela classe que mais aparece entre as árvores de decisão em caso de classificação ou pela média das saídas das árvores caso seja um problema de regressão.
+
+21. Não. Bagging é o processo de seleção de dados de forma aleatória, os dados podem se repedir numa mesma seleção, exemplos de booting é o Random Forest. Já a técnica de boosting contrói estimadores de forma sequencial, tentando reduzir viés, produzindo modelos fracos que em conjunto podem ser poderosos. Exemplos de boosting é o XGBoost, Adaboost, Gradiente Boosting.
+
+22. Previsão e inferência. Não tenho conhecimento de outro objetivo.
+
+23. Para classificação usa a matriz de confusão e através de seus dados de falso negativo e positivom verdadeiro positivo e negativo é possível extrair informações como precisão, recall (sensitividade), acurácia e especificidade. Também é possivel utilizar a AUC-ROC. Para regressão há as métricas R2, MSE, MAE, MAPE, RMSE. E existem as métricas de validação para os algoritmos de aprendizado nao supervisionado como método do cotovelo, silhueta, Gap statistic. 
+
+24. Entendo estimação para estimar um valor, neste caso utiliza-se as métricas de regressão MSE, RMSE, MAE, R2, MAPE.
+
+25. Utilizando algoritmos para redução de overfitting, como XGBoost, Random Forest. Você percebe o overfitting quando a acurária ou curva ROC do modelo está alta na base de treinamento, mas baixa para os dados de teste. 
+
+26. Os algoritmos particionais, algoritmos hieráquicos e algoritmos de densidade. 
+
+27. Os algoritmos particionais como o Kmeans, Kmedoid, os algoritmos hieráquicos e os de densidade como o DBSCAN.
+
+28. DBSCAN é um algoritmo de densidade. Utiliza-se parametros como raio e número mínimo de vizinhos para definir clusters. Nesse algoritmo os cluster podem ter diversos formatos, não somente esféricos e é um algoritmo robusto a outliers, pois o próprio algoritmo já faz o descarte deles. Não tenho conhecimento sobre Mean-shift.
+
+29. PCA é o método de redução de dimensionalidade. Quando há um número muito grande de features, é possível reduzir o número de features para componentes principais, em que cada um desses componentes representam um percentual do total de features. Só é possível utilizá-lo antes da aplicação dos modelos de agrupamento.
+
+30. Análise exploratória dos dados. Faz parte de uma das etapas de modelagem, em que é feito a exploração dos dados, analise de cada feature e suas distribuições, análise de missing. Comportamentos variados do conjunto de dados e suas correlações.
+
+31. Análise das distribuições de valores para cada feature, se uma determinada feature possui um valor ou categoria com menos de 1% de frequência o ideal é agrupá-la com uma outra categoria majoritária ou a partir de análises históricas avaliar cruzamento de curvas, onde existir mais cruzamentos são feitos também agrupamentos dessas categorias. Transformações a partir da técnica IV e WOE. Análise de missings e agrupamentos desses missings com categorias que se cruzam mais ou tem WOE similares.
+
+32. Entendo deploy como sendo levar o modelo para produção, mas não sei como fazer isso.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
